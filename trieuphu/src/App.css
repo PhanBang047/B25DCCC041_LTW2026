@@ -114,3 +114,33 @@ th, td {
 .ladder-item.current {
   background: gold;
 }
+.lifelines {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+.lifelines button {
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.lifelines button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.answer-placeholder {
+  min-height: 52px;
+}
+.audience {
+  margin-top: 16px;
+}
+.audience-row {
+  margin-bottom: 6px;
+}
+.audience-bar {
+  background: #1976d2;
+  color: #fff;
+  padding: 4px 8px;
+  min-width: 60px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}

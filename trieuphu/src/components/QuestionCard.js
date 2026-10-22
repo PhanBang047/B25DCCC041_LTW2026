@@ -1,7 +1,7 @@
 import AnswerButton from './AnswerButton';
 import { LETTERS } from '../data';
 
-const QuestionCard = ({ number, total, question, status, selected, onSelect }) => {
+const QuestionCard = ({ number, total, question, status, selected, hidden, onSelect }) => {
   const getState = (i) => {
     if (status === 'locked') return i === selected ? 'selected' : '';
     if (status === 'revealed') {
@@ -16,16 +16,20 @@ const QuestionCard = ({ number, total, question, status, selected, onSelect }) =
       <h3>{`Câu ${number}/${total}`}</h3>
       <p className="question-text">{question.question}</p>
       <div className="answer-grid">
-        {question.options.map((option, i) => (
-          <AnswerButton
-            key={i}
-            letter={LETTERS[i]}
-            text={option}
-            state={getState(i)}
-            disabled={status !== 'answering'}
-            onClick={() => onSelect(i)}
-          />
-        ))}
+        {question.options.map((option, i) =>
+          hidden.includes(i) ? (
+            <div key={i} className="answer-placeholder" />
+          ) : (
+            <AnswerButton
+              key={i}
+              letter={LETTERS[i]}
+              text={option}
+              state={getState(i)}
+              disabled={status !== 'answering'}
+              onClick={() => onSelect(i)}
+            />
+          )
+        )}
       </div>
     </div>
   );
