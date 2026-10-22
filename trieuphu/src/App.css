@@ -44,3 +44,73 @@ th, td {
   background: #4caf50;
   color: #fff;
 }
+.rules {
+  line-height: 1.7;
+}
+.play {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.play-main {
+  flex: 1;
+}
+.timer {
+  font-size: 20px;
+  font-weight: bold;
+}
+.timer.danger {
+  color: red;
+}
+.question-text {
+  font-size: 18px;
+  margin: 12px 0 20px;
+}
+.answer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.answer-btn {
+  padding: 14px;
+  font-size: 16px;
+  text-align: left;
+  border: 2px solid #999;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+.answer-btn:disabled {
+  cursor: not-allowed;
+}
+.answer-btn.selected {
+  background: orange;
+  color: #fff;
+  border-color: orange;
+}
+.answer-btn.correct {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+.answer-btn.wrong {
+  background: #e53935;
+  color: #fff;
+  border-color: #e53935;
+}
+.ladder {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 220px;
+}
+.ladder-item {
+  padding: 6px 12px;
+  border-bottom: 1px solid #ddd;
+}
+.ladder-item.milestone {
+  font-weight: bold;
+}
+.ladder-item.current {
+  background: gold;
+}
